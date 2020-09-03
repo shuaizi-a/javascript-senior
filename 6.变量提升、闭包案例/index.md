@@ -131,3 +131,14 @@ console.log(x) // => 1
 // 条件1：有形参赋值默认值（不论是否传递参数，也不论默认值的类型）
 // 条件2: 函数体中有变量声明（必须是基于let、const、val，注意let、var不能·重复声明变量，不能和形参变量名一致）这样的话，除了默认形成的函数私有上下文，还会多创建一个‘块级上下文（函数体到括号包起来的）
 ```
+
+## 类型转换
+```javascript
+let result = 100 + true + 21.2 + null + undefined + 'Tencent' + null + false;
+// NaNTencentfalse
+```
+
+```javascript
+{} + 0 ? alert('ok') : alert('no') // 0  no
+0 + {} ? alert('ok') : alert('no') // 0[object object]  ok
+```

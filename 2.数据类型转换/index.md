@@ -71,7 +71,12 @@ String(val)
 把对象转换为数字。需要先toString()转换为字符串，再去转换为数字
 基于alert/confirm/document.write()这些输出方式，都是把内容转换成字符串，然后再输出
 
-// toString([]) / toString({})  => [object object]
+// [].toString() ''
+// {}.toString()  => [object object]
+
+{} + 10 //=> 10 左边会当成一个代码块，不参与运算
+10 + {} // 10[object object]
+({}+10) // [object object]10
 ```
 
 ## 转boolean
