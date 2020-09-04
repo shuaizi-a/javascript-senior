@@ -39,3 +39,5 @@ document.body.onclick = function(ev){
   }
 }
 ```
+
+## 单例模式和JQ源码分析

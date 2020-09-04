@@ -33,5 +33,41 @@ function A(a){
 A(1)  //=> 1
 A(2)  //=> 4 此刻内部的A被提出来了覆盖掉了外部的A，A里面的a变成了私有变量不会被释放
 ```
+
+>匿名函数具名化(设置了名字)
+
+>1.设置的名字只能函数体内使用，外部无法访问到（基于这种房子代替严格模式下不兼容arguments.callee,并且实现递归算法）
+
+>2.在函数内部去修改这个名字值，默认是不能修改的，代表的依然是函数本身(除非这个函数名字在函数体内被重新赋值过，重新声明后，一切都按照新声明的为主)
+```javascript
+(function fn(){
+    console.log(fn) // 函数体
+})()
+console.log(fn)// 报错
+```
+```javascript
+var fn = 10
+(function fn(){
+    var fn = 20
+    console.log(fn) // 20
+})()
+console.log(fn)// 10
+```
+
+## 套娃提
+```javascript
+function fun(n, o) {
+    console.log(o) // undefined 0 1 1
+    return {
+        fun: function (m) {
+            return fun(m, n)
+        }
+    }
+}
+var c = fun(0).fun(1);
+c.fun(2);
+c.fun(3); 
+```
+
 ![avatar](bbtj.bmp)
 ![avatar](almst.bmp)
