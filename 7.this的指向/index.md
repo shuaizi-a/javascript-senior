@@ -5,7 +5,7 @@
 + 1.给当前元素的某个事件行为绑定方法，事件触发，执行对应的方法，方法中的this是当前的元素本身
 ```javascript
 document.body.onclick = function (){
-  //this: body
+  // this: body
   // IE6~8: window
 }
 ```
@@ -72,7 +72,8 @@ obj.fs()
     fn:fn
   };  
   fn.call(obj)
-  // call()不传参，默认this指向window，严格模式下指向window
+  // call()不传参，默认this指向window，严格模式下指向undefined
+  
   ```
   >call和apply的区别: call是把参一个一个的传过去，apply是把参放到一个数组内传递过去
   - bind()
