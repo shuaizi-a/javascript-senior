@@ -1,7 +1,7 @@
 # 基本数据类型(原始类型值)
 ## 数字 number NAN/Infinity
 ```javascript
-NAN：not a number 不是一个有效的数字，但它属于number数据类型
+NaN：not a number 不是一个有效的数字，但它属于number数据类型
 console.log(typeof NaN)  //=> 'number'
 console.log(NaN === NaN) //=> false NaN 不等于 NaN
 let n = 10;
