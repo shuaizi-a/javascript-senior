@@ -1,3 +1,4 @@
+
 ## 数据类型检测
 + typeof
     - 返回结果是一个字符串，字符串包含了对应的数据类型：number/string/boolean/undefined/symbol/bigint/object/function
