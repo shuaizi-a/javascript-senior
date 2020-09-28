@@ -139,8 +139,8 @@ var obj = {
 
 console.log(obj.prop.getFullName()) // thsi => prop => undefined
 
-var test = obj.prop.getFullName();
-console.log(test) // thsi => window => shuaizi
+var test = obj.prop.getFullName;
+console.log(test()) // thsi => window => shuaizi
 ```
 
 ```javascript
