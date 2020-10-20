@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>mouse</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    #div {
+      width: 100px;
+      height: 100px;
+      border: 1px solid red;
+      /* position: absolute; */
+    }
+    #div2 {
+      width: 200px;
+      height: 200px;
+      border: 1px solid red;
+      /* position: absolute; */
+    }
+  </style>
+</head>
+
+<body>
+  <div id="div"> </div>
+
+  <div id="div2"> </div>
+
+
+  <script>
+
+    function add(id) {
+      var div = document.getElementById(id)
+      div.style.position = 'absolute'
+
+      var dragging = false
+      var position = null
+
+      div.addEventListener('mousedown', function (e) {
+        dragging = true
+        // console.log(e.clientX, e.clientY)
+        position = [e.clientX, e.clientY]
+      })
+
+      document.addEventListener('mousemove', function (e) {
+        //判断是否点击div
+        if (dragging === false) {
+          return
+        }
+
+        // 获取鼠标移动坐标
+        const x = e.clientX
+        const y = e.clientY
+
+        // 鼠标移动坐标减去点击坐标
+        const deltax = x - position[0]
+        const deltay = y - position[1]
+
+        // 把字符串转为数字
+        const left = parseInt(div.style.left || 0)
+        const top = parseInt(div.style.top || 0)
+
+        // 设置坐标
+        div.style.left = left + deltax + 'px'
+        div.style.top = top + deltay + 'px'
+
+        // 鼠标移动坐标覆盖点击坐标
+        position = [x, y]
+        console.log(x, y)
+      })
+
+      document.addEventListener('mouseup', function () {
+        dragging = false
+      })
+    }
+
+    add('div')
+    add('div2')
+  </script>
+</body>
+
+</html>
