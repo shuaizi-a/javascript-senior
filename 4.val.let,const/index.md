@@ -9,7 +9,7 @@
 >var/function的存在变量提升而let/const不存在变量提升机制,在相同的上下文中，let不允许重复声明
 
 ```javascript
-console.log(a) // undefinend
+console.log(n) // undefinend
 //var n； 变量提升
 var n = '123'
 
@@ -19,7 +19,7 @@ let m = 12
 
 
 fn() // 可以执行不会报错
-function(){
+function fn(){
   console.log('123456')
 }
 
@@ -36,14 +36,14 @@ fn1() // 正常执行
 ```javascript
 console.log(fn) // undefined, 老版本中还是函数代码字符串
 if(1 == 1){
-  console.log(fn) // => 函数代码字符串
+  console.log(fn) // => 函数代码字符串 会隐射到全局一份
   function fn(){
     console.log('ok')
   }
   fn = 12
   console.log(fn) // => 12
 }
-console.log(fu) // 函数代码字符串
+console.log(fn) // 函数代码字符串
 ```
 
 >暂时性死区(浏览器遗留BUG)：基于typeof检测一个没有定义的变量，不会报错，结果是undefined

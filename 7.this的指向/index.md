@@ -105,10 +105,10 @@ obj.fn = (function(num){
   }
 })(obj.num)
 
-var fn = boj.fn;
+var fn = obj.fn;
 fn(5);
 obj.fn(10);
-console.log(num, obj.num)  // 65 30
+console.log(num, obj.num)  // 63 66
 ```
 
 ```javascript
@@ -155,6 +155,6 @@ console.log(test()) // thsi => window => shuaizi
     }
   }
   json.dbl()
-  alert(json.val +val); //=> 12
+  alert(json.val + val); //=> 12
 })()
 ```

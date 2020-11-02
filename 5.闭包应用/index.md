@@ -101,6 +101,7 @@ function getCss(element, attr){
 ```
 
 ## 函数柯里化
+>把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数的计算结果;
 ```javascript
 function fn(a){
   return function(b){
@@ -144,11 +145,6 @@ function debounce(func, wait = 1000, immedate = false) {
 
         now ? func.call(this, ...params) : null
     }
-}
-
-function fn(item){
-  console.log(1)
-  console.log(item)
 }
 
 document.body.onclick = debounce(fn,300,true)
